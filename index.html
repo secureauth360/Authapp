@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureAuth - Live Prototype</title>
     <style>
         :root {
-            --primary-color: #005A54; 
+            --primary-color: #005A54; /* Brand Deep Teal */
             --primary-dark: #00443e;
-            --secondary-color: #00B159;
+            --secondary-color: #00B159; /* Verification Green */
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
             --text-main: #333333;
@@ -32,6 +32,7 @@
             padding: 20px;
         }
 
+        /* Simulates a mobile phone device */
         .phone-container {
             width: 375px;
             height: 750px;
@@ -45,6 +46,7 @@
             flex-direction: column;
         }
 
+        /* Base Screen Styling */
         .screen {
             display: none;
             flex: 1;
@@ -57,6 +59,7 @@
             display: flex;
         }
 
+        /* Login Screen (Full Background) */
         #screen-login {
             background-color: var(--primary-color);
             color: white;
@@ -65,6 +68,7 @@
             text-align: center;
         }
 
+        /* Reusable UI Components */
         .logo-placeholder {
             width: 90px;
             height: 90px;
@@ -82,6 +86,7 @@
             font-size: 50px;
             color: var(--primary-color);
             margin: 20px auto;
+            text-align: center;
         }
 
         h1 {
@@ -99,7 +104,7 @@
         .form-group {
             width: 100%;
             margin-bottom: 24px;
-            text-align: right;
+            text-align: left;
         }
 
         label {
@@ -117,11 +122,9 @@
             background: rgba(255,255,255,0.1);
             color: white;
             font-size: 18px;
-            text-align: left;
-            direction: ltr;
-            letter-spacing: 1px;
             outline: none;
             transition: all 0.3s;
+            letter-spacing: 1px;
         }
 
         input[type="tel"]:focus {
@@ -159,6 +162,7 @@
             background-color: var(--primary-dark);
         }
 
+        /* Verification Screen */
         .back-btn {
             font-size: 24px;
             color: var(--text-main);
@@ -187,7 +191,6 @@
         .code-inputs {
             display: flex;
             justify-content: space-between;
-            direction: ltr;
             margin-bottom: 15px;
         }
 
@@ -229,6 +232,7 @@
             cursor: pointer;
         }
 
+        /* Success Screen */
         #screen-success {
             justify-content: center;
             align-items: center;
@@ -241,6 +245,7 @@
             margin-bottom: 20px;
         }
 
+        /* Dashboard Screen */
         .dashboard-header {
             background-color: var(--primary-color);
             color: white;
@@ -263,6 +268,7 @@
             padding: 16px;
             margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-align: left;
         }
 
         .status-header {
@@ -278,6 +284,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            text-align: left;
         }
 
         .activity-item {
@@ -303,21 +310,21 @@
         <div id="screen-login" class="screen active">
             <div class="logo-placeholder">🛡️</div>
             <h1>SecureAuth</h1>
-            <p class="subtitle">Smart and easy security with SMS</p>
+            <p class="subtitle">Simple & Secure SMS Authentication</p>
             
             <div class="form-group">
-                <label for="phone">Mobile phone</label>
-                <input type="tel" id="phone" placeholder="1 (000) 0000" value="+1 (234) 5678">
+                <label for="phone">Mobile Phone Number</label>
+                <input type="tel" id="phone" placeholder="+1 (555) 000-0000" value="+1 (555) 123-4567">
             </div>
             
-            <button class="btn btn-primary" onclick="goToScreen('screen-verify')">Send verification</button>
+            <button class="btn btn-primary" onclick="goToScreen('screen-verify')">Send Verification Code</button>
         </div>
 
         <div id="screen-verify" class="screen">
-            <button class="back-btn" onclick="goToScreen('screen-login')">➔</button>
+            <button class="back-btn" onclick="goToScreen('screen-login')">←</button>
             <div class="internal-logo">📱</div>
-            <h2 class="internal-title">Verify account</h2>
-            <p class="internal-desc">enter 6-digit code sent to you <br><strong dir="ltr">+1 (234)-***-5678</strong></p>
+            <h2 class="internal-title">Verify Account</h2>
+            <p class="internal-desc">Enter the 6-digit code sent to <br><strong>+1 (555) ***-4567</strong></p>
             
             <div class="code-inputs">
                 <input type="text" class="code-field" maxlength="1" oninput="moveNext(this)" value="1">
@@ -328,58 +335,58 @@
                 <input type="text" class="code-field" maxlength="1" oninput="moveNext(this)">
             </div>
 
-            <div id="error-msg" class="error-message">invalid code, try again.</div>
+            <div id="error-msg" class="error-message">The code entered is incorrect. Please try again.</div>
 
             <div class="resend-container">
-                didn't recive code? <span class="resend-link" onclick="simulateResend()">send again (0:45)</span>
+                Didn't receive a code? <span class="resend-link" onclick="simulateResend()">Resend (0:45)</span>
             </div>
 
-            <button class="btn btn-internal" onclick="verifyCode()">Verify</button>
+            <button class="btn btn-internal" onclick="verifyCode()">Verify Code</button>
         </div>
 
         <div id="screen-success" class="screen">
             <div class="success-icon">✅</div>
-            <h2 class="internal-title" style="font-size: 26px; margin-bottom: 15px;">The code is valid!</h2>
-            <p class="internal-desc">Your device is verified.</p>
+            <h2 class="internal-title" style="font-size: 24px; margin-bottom: 15px;">Verified Successfully!</h2>
+            <p class="internal-desc">Your phone number has been securely verified. <br>Redirecting to dashboard...</p>
             
-            <button class="btn btn-internal" onclick="goToScreen('screen-dashboard')" style="margin-top: 40px;">dashboard</button>
+            <button class="btn btn-internal" onclick="goToScreen('screen-dashboard')" style="margin-top: 40px;">Go to Dashboard</button>
         </div>
 
         <div id="screen-dashboard" class="screen">
             <div class="dashboard-header">
                 <div class="welcome-text">
-                    <p style="font-size: 12px; opacity: 0.8;">welcome,</p>
-                    <h3>stellar</h3>
+                    <p style="font-size: 12px; opacity: 0.8;">Welcome back,</p>
+                    <h3>John Doe</h3>
                 </div>
                 <div style="font-size: 20px;">🔔</div>
             </div>
 
             <div class="status-card">
                 <div class="status-header">
-                    <span>🛡️</span> your account is secure
+                    <span>🛡️</span> Your Account is Secure
                 </div>
-                <p style="font-size: 13px; color: var(--text-muted);">Last verification done by SMS.</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Last verification was successfully completed via SMS today.</p>
             </div>
 
-            <h4 style="font-size: 16px; margin-bottom: 12px; text-align: right;">Last activity</h4>
+            <h4 style="font-size: 16px; margin-bottom: 12px; text-align: left;">Recent Activity</h4>
             <div class="activity-list">
                 <div class="activity-item">
                     <div>
-                        <strong style="display:block;">computer login</strong>
-                        <span style="font-size: 12px; color:var(--text-muted)">Chrome • Budapest</span>
+                        <strong style="display:block;">Login from Desktop</strong>
+                        <span style="font-size: 12px; color:var(--text-muted)">Chrome • New York, USA</span>
                     </div>
                     <span class="activity-time">3h ago</span>
                 </div>
                 <div class="activity-item">
                     <div>
-                        <strong style="display:block;">change settings</strong>
-                        <span style="font-size: 12px; color:var(--text-muted)">app</span>
+                        <strong style="display:block;">Security Settings Changed</strong>
+                        <span style="font-size: 12px; color:var(--text-muted)">Mobile App</span>
                     </div>
-                    <span class="activity-time">yesterday</span>
+                    <span class="activity-time">Yesterday</span>
                 </div>
             </div>
 
-            <button class="btn btn-internal" onclick="goToScreen('screen-login')" style="background-color: #f0f0f0; color: #333;">Logout</button>
+            <button class="btn btn-internal" onclick="goToScreen('screen-login')" style="background-color: #f0f0f0; color: #333;">Log Out</button>
         </div>
 
     </div>
@@ -425,7 +432,7 @@
         }
 
         function simulateResend() {
-            alert("New code was sent!");
+            alert("A new verification code has been sent to your device!");
         }
     </script>
 </body>
