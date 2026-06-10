@@ -17,14 +17,12 @@
             --footer-bg: #111a19;
         }
 
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-
 
         body {
             background-color: var(--bg-color);
@@ -33,7 +31,6 @@
             display: flex;
             flex-direction: column;
         }
-
 
         /* ==========================================
            HEADER NAVIGATION
@@ -47,7 +44,6 @@
             z-index: 1000;
         }
 
-
         .header-container {
             max-width: 1300px;
             margin: 0 auto;
@@ -57,14 +53,12 @@
             width: 100%;
         }
 
-
         .brand-logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
         }
-
 
         .brand-logo {
             width: 38px;
@@ -79,7 +73,6 @@
             box-shadow: 0 4px 10px rgba(0,90,84,0.15);
         }
 
-
         .brand-name {
             font-size: 21px;
             font-weight: 700;
@@ -87,13 +80,11 @@
             letter-spacing: -0.5px;
         }
 
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
         }
-
 
         nav ul li a {
             text-decoration: none;
@@ -101,7 +92,6 @@
             font-size: 14px;
             font-weight: 500;
         }
-
 
         .header-cta {
             background: var(--primary-color);
@@ -112,7 +102,6 @@
             font-size: 13px;
             font-weight: 600;
         }
-
 
         /* ==========================================
            MAIN CONTENT LAYOUT (HERO & DEMO)
@@ -128,12 +117,10 @@
             align-items: center;
         }
 
-
         .marketing-side {
             width: 100%;
             text-align: center;
         }
-
 
         .marketing-side h2 {
             font-size: 32px;
@@ -144,11 +131,9 @@
             letter-spacing: -0.5px;
         }
 
-
         .marketing-side h2 span {
             color: var(--primary-color);
         }
-
 
         .hero-desc {
             font-size: 16px;
@@ -157,7 +142,6 @@
             margin: 0 auto 35px auto;
             max-width: 550px;
         }
-
 
         .features-grid {
             display: flex;
@@ -168,13 +152,11 @@
             margin: 0 auto;
         }
 
-
         .feature-item {
             display: flex;
             gap: 14px;
             align-items: flex-start;
         }
-
 
         .feature-icon {
             background: rgba(0, 90, 84, 0.08);
@@ -189,7 +171,6 @@
             flex-shrink: 0;
         }
 
-
         .feature-text h4 {
             font-size: 15px;
             font-weight: 700;
@@ -197,13 +178,11 @@
             color: #111;
         }
 
-
         .feature-text p {
             font-size: 13px;
             color: var(--text-muted);
             line-height: 1.4;
         }
-
 
         .demo-side {
             width: 100%;
@@ -212,7 +191,6 @@
             align-items: center;
             justify-content: center;
         }
-
 
         .demo-badge {
             background: #222;
@@ -225,7 +203,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
 
         .phone-container {
             width: 100%;
@@ -241,7 +218,6 @@
             flex-direction: column;
         }
 
-
         /* Screen Base */
         .screen {
             display: none;
@@ -251,11 +227,9 @@
             position: relative;
         }
 
-
         .screen.active {
             display: flex;
         }
-
 
         /* Screen 1: Login */
         #screen-login {
@@ -265,7 +239,6 @@
             align-items: center;
             text-align: center;
         }
-
 
         .logo-placeholder {
             width: 70px;
@@ -280,13 +253,11 @@
             border: 2px solid rgba(255,255,255,0.2);
         }
 
-
         .subtitle {
             font-size: 14px;
             opacity: 0.85;
             margin-bottom: 30px;
         }
-
 
         input[type="tel"] {
             width: 100%;
@@ -299,7 +270,6 @@
             outline: none;
         }
 
-
         .btn {
             width: 100%;
             padding: 14px;
@@ -310,19 +280,16 @@
             cursor: pointer;
         }
 
-
         .btn-primary {
             background-color: white;
             color: var(--primary-color);
         }
-
 
         .btn-internal {
             background-color: var(--primary-color);
             color: white;
             margin-top: auto;
         }
-
 
         /* Screen 2: Verification */
         .back-btn {
@@ -335,7 +302,6 @@
             margin-bottom: 15px;
         }
 
-
         .internal-title {
             color: var(--text-main);
             text-align: center;
@@ -343,7 +309,6 @@
             margin-bottom: 10px;
             font-weight: 700;
         }
-
 
         .internal-desc {
             color: var(--text-muted);
@@ -353,14 +318,12 @@
             line-height: 1.4;
         }
 
-
         .code-inputs {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
             gap: 4px;
         }
-
 
         .code-field {
             width: 14%;
@@ -374,7 +337,6 @@
             outline: none;
         }
 
-
         .error-message {
             color: var(--error-color);
             font-size: 12px;
@@ -383,7 +345,6 @@
             display: none;
         }
 
-
         .resend-container {
             text-align: center;
             color: var(--text-muted);
@@ -391,13 +352,11 @@
             margin-top: 10px;
         }
 
-
         .resend-link {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
-
 
         /* Screen 3: Success */
         #screen-success {
@@ -406,13 +365,11 @@
             text-align: center;
         }
 
-
         .success-icon {
             font-size: 56px;
             color: var(--secondary-color);
             margin-bottom: 15px;
         }
-
 
         /* Screen 4: Dashboard */
         .dashboard-header {
@@ -425,12 +382,10 @@
             align-items: center;
         }
 
-
         .welcome-text h3 {
             font-size: 15px;
             font-weight: 600;
         }
-
 
         .status-card {
             background: #fff;
@@ -440,7 +395,6 @@
             margin-bottom: 15px;
             text-align: left;
         }
-
 
         .status-header {
             display: flex;
@@ -452,14 +406,12 @@
             font-size: 13px;
         }
 
-
         .activity-list {
             display: flex;
             flex-direction: column;
             gap: 8px;
             text-align: left;
         }
-
 
         .activity-item {
             background: #f9f9f9;
@@ -470,7 +422,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
 
         /* ==========================================
            NEW SECTION: ADMIN DASHBOARD PRESENTATION
@@ -483,13 +434,11 @@
             width: 100%;
         }
 
-
         .admin-container {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-
 
         .admin-section h3 {
             font-size: 28px;
@@ -497,7 +446,6 @@
             color: #111;
             margin-bottom: 10px;
         }
-
 
         .admin-section .section-desc {
             font-size: 16px;
@@ -507,13 +455,11 @@
             line-height: 1.5;
         }
 
-
         .admin-showcase-grid {
             display: flex;
             flex-direction: column;
             gap: 50px;
         }
-
 
         .admin-card {
             background: var(--bg-color);
@@ -526,7 +472,6 @@
             text-align: left;
         }
 
-
         .admin-card-info h4 {
             font-size: 20px;
             font-weight: 700;
@@ -534,14 +479,12 @@
             margin-bottom: 8px;
         }
 
-
         .admin-card-info p {
             font-size: 14px;
             color: var(--text-muted);
             line-height: 1.5;
             margin-bottom: 15px;
         }
-
 
         /* Placeholder images mimicking your generated Admin screenshots */
         .mock-admin-img {
@@ -561,26 +504,21 @@
             overflow: hidden;
         }
 
-
         /* Styled internal layout to look like your actual dashboard viewports */
         .mock-admin-img::before {
             content: "🖥️ [Customer Admin Portal View]";
             font-size: 16px;
         }
 
-
         #admin-img-1 {
             background: #fff url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
         }
         #admin-img-1::before { content: "📊 Global Overview & Live Verification Analytics"; color: white; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 20px; }
 
-
         #admin-img-2 {
             background: #fff url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
         }
         #admin-img-2::before { content: "📋 Deep SMS Logs, Audits & User Status Management"; color: white; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 20px; }
-
-
 
 
         /* ==========================================
@@ -594,7 +532,6 @@
             font-size: 13px;
         }
 
-
         .footer-container {
             max-width: 1300px;
             margin: 0 auto;
@@ -604,14 +541,12 @@
             margin-bottom: 30px;
         }
 
-
         .footer-col h4 {
             color: white;
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 12px;
         }
-
 
         .footer-col p { line-height: 1.5; }
         .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -631,7 +566,6 @@
             font-size: 12px;
         }
 
-
         /* ==========================================
            DESKTOP MEDIA QUERIES (> 950px)
            ========================================== */
@@ -644,13 +578,11 @@
                 gap: 60px;
             }
 
-
             .marketing-side { width: auto; text-align: left; }
             .marketing-side h2 { font-size: 46px; }
             .hero-desc { margin: 0 0 40px 0; }
             .demo-side { width: auto; }
             .phone-container { max-width: 360px; height: 720px; }
-
 
             /* Admin Section layout for desktop */
             .admin-section { padding: 80px 40px; }
@@ -668,11 +600,9 @@
             .admin-card-info { flex: 1; }
             .mock-admin-img { flex: 1.3; }
 
-
             .footer-container { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
             .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
         }
-
 
         @media (max-width: 949px) {
             nav { display: none; }
@@ -680,7 +610,6 @@
     </style>
 </head>
 <body>
-
 
     <!-- TOP NAVIGATION -->
     <header>
@@ -700,7 +629,6 @@
             <a href="#" class="header-cta">Get Started</a>
         </div>
     </header>
-
 
     <!-- HERO & INTERACTIVE DEMO -->
     <div class="main-container">
@@ -730,7 +658,6 @@
             </div>
         </div>
 
-
         <div class="demo-side">
             <div class="demo-badge">Interactive Live Demo</div>
             
@@ -746,7 +673,6 @@
                     </div>
                     <button class="btn btn-primary" onclick="goToScreen('screen-verify')">Send Verification Code</button>
                 </div>
-
 
                 <!-- Screen 2: Verification -->
                 <div id="screen-verify" class="screen">
@@ -767,7 +693,6 @@
                     <button class="btn btn-internal" onclick="verifyCode()">Verify Code</button>
                 </div>
 
-
                 <!-- Screen 3: Success -->
                 <div id="screen-success" class="screen">
                     <div class="success-icon">✅</div>
@@ -775,7 +700,6 @@
                     <p class="internal-desc">Your phone number has been securely verified. <br>Welcome back!</p>
                     <button class="btn btn-internal" onclick="goToScreen('screen-dashboard')" style="margin-top: 25px;">Go to Dashboard</button>
                 </div>
-
 
                 <!-- Screen 4: Dashboard -->
                 <div id="screen-dashboard" class="screen">
@@ -805,9 +729,7 @@
             </div>
         </div>
 
-
     </div>
-
 
     <!-- ========================================== -->
     <!-- NEW SECTION: CUSTOMER ADMIN PORTAL SHOWCASE-->
@@ -828,7 +750,6 @@
                     <div class="mock-admin-img" id="admin-img-1"></div>
                 </div>
 
-
                 <!-- Admin Card 2 -->
                 <div class="admin-card">
                     <div class="admin-card-info">
@@ -838,11 +759,9 @@
                     <div class="mock-admin-img" id="admin-img-2"></div>
                 </div>
 
-
             </div>
         </div>
     </section>
-
 
     <!-- GLOBAL FOOTER -->
     <footer>
@@ -885,7 +804,6 @@
         </div>
     </footer>
 
-
     <script>
         function goToScreen(screenId) {
             document.querySelectorAll('.screen').forEach(screen => {
@@ -893,7 +811,6 @@
             });
             document.getElementById(screenId).classList.add('active');
         }
-
 
         function moveNext(current) {
             if (current.value.length >= 1) {
@@ -904,12 +821,10 @@
             }
         }
 
-
         function verifyCode() {
             const fields = document.querySelectorAll('.code-field');
             let code = "";
             fields.forEach(f => code += f.value);
-
 
             if (code.length < 6) {
                 const errorMsg = document.getElementById('error-msg');
@@ -928,7 +843,6 @@
                 goToScreen('screen-success');
             }
         }
-
 
         function simulateResend() {
             alert("A new verification code has been sent to your device!");
