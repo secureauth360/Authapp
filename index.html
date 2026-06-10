@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureAuth - Multi-Channel Authentication</title>
+    <title>SecureAuth - Multi-Channel Authentication Platform</title>
     <style>
         :root {
             --primary-color: #005A54; /* Brand Deep Teal */
@@ -16,7 +16,7 @@
             --error-color: #D9383A;
             --footer-bg: #111a19;
             
-            /* App Colors for Dynamic UX */
+            /* App Colors for Dynamic UX & Badges */
             --whatsapp-color: #25D366;
             --telegram-color: #0088cc;
             --signal-color: #3a5bb1;
@@ -118,7 +118,7 @@
             width: 100%;
             max-width: 1300px;
             margin: 0 auto;
-            padding: 30px 20px 60px 20px;
+            padding: 30px 20px 40px 20px;
             gap: 40px;
             align-items: center;
         }
@@ -265,7 +265,6 @@
             margin-bottom: 25px;
         }
 
-        /* Custom Dropdown Styling */
         select.app-select {
             width: 100%;
             padding: 14px;
@@ -332,7 +331,6 @@
             font-size: 44px;
             margin: 15px auto;
             text-align: center;
-            transition: all 0.3s ease;
         }
 
         .internal-title {
@@ -385,24 +383,11 @@
             margin-top: 10px;
         }
 
-        .resend-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .resend-link { color: var(--primary-color); text-decoration: none; font-weight: bold; }
 
         /* Screen 3: Success */
-        #screen-success {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .success-icon {
-            font-size: 56px;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
+        #screen-success { justify-content: center; align-items: center; text-align: center; }
+        .success-icon { font-size: 56px; color: var(--secondary-color); margin-bottom: 15px; }
 
         /* Screen 4: Dashboard */
         .dashboard-header {
@@ -436,22 +421,88 @@
             font-size: 13px;
         }
 
-        .activity-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
+        .activity-list { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+        .activity-item { background: #f9f9f9; padding: 10px; border-radius: 10px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* ==========================================
+           NEW SECTION: CHANNELS SHOWCASE (ATTRACT CUSTOMERS)
+           ========================================== */
+        .channels-section {
+            width: 100%;
+            background: #fdfdfd;
+            padding: 50px 20px;
+            border-top: 1px solid #e5e9e8;
+            text-align: center;
         }
 
-        .activity-item {
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .channels-section h3 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #111;
         }
+
+        .channels-section .sub-title {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+            line-height: 1.5;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .channel-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #eaf0ee;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.04);
+        }
+
+        .channel-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .channel-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        .channel-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Channel Custom Colors */
+        .badge-wa { background-color: var(--whatsapp-color); }
+        .badge-tg { background-color: var(--telegram-color); }
+        .badge-sg { background-color: var(--signal-color); }
+        .badge-sms { background-color: var(--sms-color); }
 
         /* ==========================================
            ADMIN DASHBOARD SHOWCASE
@@ -464,33 +515,11 @@
             width: 100%;
         }
 
-        .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .admin-section h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #111;
-            margin-bottom: 10px;
-        }
-
-        .admin-section .section-desc {
-            font-size: 16px;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            line-height: 1.5;
-        }
-
-        .admin-showcase-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-        }
-
+        .admin-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .admin-section h3 { font-size: 28px; font-weight: 800; color: #111; margin-bottom: 10px; }
+        .admin-section .section-desc { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto; line-height: 1.5; }
+        .admin-showcase-grid { display: flex; flex-direction: column; gap: 50px; }
+        
         .admin-card {
             background: var(--bg-color);
             border-radius: 20px;
@@ -502,19 +531,8 @@
             text-align: left;
         }
 
-        .admin-card-info h4 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .admin-card-info p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
+        .admin-card-info h4 { font-size: 20px; font-weight: 700; color: var(--primary-color); margin-bottom: 8px; }
+        .admin-card-info p { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px; }
 
         .mock-admin-img {
             width: 100%;
@@ -533,16 +551,10 @@
             overflow: hidden;
         }
 
-        #admin-img-1 {
-            background: #fff url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-        }
+        #admin-img-1 { background: #fff url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat; }
         #admin-img-1::before { content: "📊 Multi-Channel Verification & Cost Delivery Analytics"; color: white; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 20px; }
-
-        #admin-img-2 {
-            background: #fff url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-        }
+        #admin-img-2 { background: #fff url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat; }
         #admin-img-2::before { content: "📋 Deep WhatsApp, Telegram, Signal & SMS Logs"; color: white; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 20px; }
-
 
         /* ==========================================
            GLOBAL FOOTER
@@ -555,22 +567,8 @@
             font-size: 13px;
         }
 
-        .footer-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-col h4 {
-            color: white;
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
+        .footer-container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
+        .footer-col h4 { color: white; font-size: 15px; font-weight: 600; margin-bottom: 12px; }
         .footer-col p { line-height: 1.5; }
         .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
         .footer-col ul li a { color: #a0afae; text-decoration: none; }
@@ -607,15 +605,15 @@
             .demo-side { width: auto; }
             .phone-container { max-width: 360px; height: 720px; }
 
+            /* Grid updates for Channels Showcase */
+            .channels-section { padding: 70px 40px; }
+            .channels-section h3 { font-size: 34px; }
+            .channels-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
             .admin-section { padding: 80px 40px; }
             .admin-section h3 { font-size: 36px; }
             .admin-showcase-grid { gap: 40px; }
-            .admin-card {
-                flex-direction: row;
-                align-items: center;
-                padding: 40px;
-                gap: 50px;
-            }
+            .admin-card { flex-direction: row; align-items: center; padding: 40px; gap: 50px; }
             .admin-card:nth-child(even) { flex-direction: row-reverse; }
             .admin-card-info { flex: 1; }
             .mock-admin-img { flex: 1.3; }
@@ -631,6 +629,7 @@
 </head>
 <body>
 
+    <!-- TOP NAVIGATION -->
     <header>
         <div class="header-container">
             <a href="#" class="brand-logo-area">
@@ -649,6 +648,7 @@
         </div>
     </header>
 
+    <!-- HERO & INTERACTIVE DEMO -->
     <div class="main-container">
         
         <div class="marketing-side">
@@ -667,14 +667,6 @@
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-text">
-                        <h4>Instant OTP Execution</h4>
-                        <p>Distributed messaging APIs dispatch custom security phrases within fractions of a second securely through deep-encrypted app tunnels.</p>
-                    </div>
-                </div>
-                
-                <div class="feature-item">
                     <div class="feature-icon">🔒</div>
                     <div class="feature-text">
                         <h4>Advanced Security Guard</h4>
@@ -688,6 +680,7 @@
             <div class="demo-badge">Interactive Live Demo</div>
             
             <div class="phone-container">
+                <!-- Screen 1: Login -->
                 <div id="screen-login" class="screen active">
                     <div class="logo-placeholder">🛡️</div>
                     <h1 style="font-size: 24px; margin-bottom: 5px;">SecureAuth</h1>
@@ -711,6 +704,7 @@
                     <button class="btn btn-primary" onclick="triggerSendCode()">Send Verification Code</button>
                 </div>
 
+                <!-- Screen 2: Verification -->
                 <div id="screen-verify" class="screen">
                     <button class="back-btn" onclick="goToScreen('screen-login')">←</button>
                     <div id="app-badge" class="dynamic-app-badge">📱</div>
@@ -730,6 +724,7 @@
                     <button class="btn btn-internal" id="verify-action-btn" onclick="verifyCode()">Verify Code</button>
                 </div>
 
+                <!-- Screen 3: Success -->
                 <div id="screen-success" class="screen">
                     <div class="success-icon">✅</div>
                     <h2 class="internal-title" style="font-size: 20px; margin-bottom: 12px;">Verified Successfully!</h2>
@@ -737,6 +732,7 @@
                     <button class="btn btn-internal" onclick="goToScreen('screen-dashboard')" style="margin-top: 25px;">Go to Dashboard</button>
                 </div>
 
+                <!-- Screen 4: Dashboard -->
                 <div id="screen-dashboard" class="screen">
                     <div class="dashboard-header" id="dash-header">
                         <div class="welcome-text">
@@ -766,6 +762,47 @@
 
     </div>
 
+    <!-- ========================================== -->
+    <!-- NEW SECTION: SUPPORTED APPLICATIONS CARDS -->
+    <!-- ========================================== -->
+    <section class="channels-section">
+        <div class="channels-container">
+            <h3>Supported Channels Your Users Love</h3>
+            <p class="sub-title">Give your customers the flexibility to authenticate through the world's most trusted messaging platforms, ensuring higher conversion rates and maximum delivery success.</p>
+            
+            <div class="channels-grid">
+                <!-- WhatsApp Card -->
+                <div class="channel-card">
+                    <div class="channel-badge badge-wa">🟢</div>
+                    <h4>WhatsApp Business</h4>
+                    <p>Leverage a 98% open rate. Deliver verified, branded security codes directly into users' chats instantly.</p>
+                </div>
+
+                <!-- Telegram Card -->
+                <div class="channel-card">
+                    <div class="channel-badge badge-tg">🔵</div>
+                    <h4>Telegram Chat</h4>
+                    <p>Fast, reliable, and entirely developer-friendly. Ideal for tech-savvy communities and fast response loops.</p>
+                </div>
+
+                <!-- Signal Card -->
+                <div class="channel-card">
+                    <div class="channel-badge badge-sg">🔵</div>
+                    <h4>Signal App</h4>
+                    <p>Maximum data protection. Send state-of-the-art secure tokens through end-to-end open-source encrypted rails.</p>
+                </div>
+
+                <!-- SMS Card -->
+                <div class="channel-card">
+                    <div class="channel-badge badge-sms">💬</div>
+                    <h4>Traditional SMS</h4>
+                    <p>The universal fallback. Reaches any mobile phone network or region seamlessly, no application required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTERPRISE ADMIN SHOWCASE -->
     <section class="admin-section">
         <div class="admin-container">
             <h3>Enterprise Omni-Channel Dashboard</h3>
@@ -791,6 +828,7 @@
         </div>
     </section>
 
+    <!-- GLOBAL FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -832,7 +870,6 @@
     </footer>
 
     <script>
-        // Global variables to track state based on selection
         let chosenChannel = 'sms';
         const channelConfig = {
             sms: { name: 'SMS', icon: '💬', color: '#005A54' },
@@ -857,26 +894,21 @@
             }
         }
 
-        // Updates UI elements dynamically during login screen adjustments
         function updateChannelUX() {
             chosenChannel = document.getElementById('auth-channel').value;
         }
 
-        // Executes logic when sending code, updating screen 2 + dashboard contexts
         function triggerSendCode() {
             const config = channelConfig[chosenChannel];
             const phoneVal = document.getElementById('phone').value;
             
-            // Set verification layout text dynamically
             document.getElementById('app-badge').innerHTML = config.icon;
             document.getElementById('verify-desc').innerHTML = `Enter the 6-digit code sent to your <br><strong>${config.name}</strong> account at <strong>${phoneVal}</strong>`;
             
-            // Update custom brand colors on primary app actions inside internal flows
             document.getElementById('verify-action-btn').style.backgroundColor = config.color;
             document.getElementById('dash-header').style.backgroundColor = config.color;
             document.getElementById('logout-btn').style.color = '#333';
             
-            // Set dashboard activity text based on previous channel login
             document.getElementById('dash-status-desc').innerText = `Last verification successfully completed via ${config.name} secure tunnel today.`;
             document.getElementById('dash-activity-sub').innerText = `Authorized via ${config.name} Application`;
 
