@@ -129,7 +129,7 @@
         }
 
         .marketing-side h2 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
             line-height: 1.2;
             color: #111;
@@ -144,17 +144,40 @@
         .hero-desc {
             font-size: 16px;
             color: var(--text-muted);
-            line-height: 1.5;
-            margin: 0 auto 35px auto;
-            max-width: 550px;
+            line-height: 1.6;
+            margin: 0 auto 25px auto;
+            max-width: 600px;
         }
 
+        /* Technical Info Badges (New Professional Addition) */
+        .tech-specs-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .spec-badge {
+            background: rgba(0, 90, 84, 0.05);
+            border: 1px solid rgba(0, 90, 84, 0.15);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Features Grid */
         .features-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
             text-align: left;
-            max-width: 550px;
+            max-width: 580px;
             margin: 0 auto;
         }
 
@@ -167,8 +190,8 @@
         .feature-icon {
             background: rgba(0, 90, 84, 0.08);
             color: var(--primary-color);
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -178,16 +201,16 @@
         }
 
         .feature-text h4 {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             color: #111;
         }
 
         .feature-text p {
             font-size: 13px;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .demo-side {
@@ -327,27 +350,9 @@
             margin-bottom: 15px;
         }
 
-        .dynamic-app-badge {
-            font-size: 44px;
-            margin: 15px auto;
-            text-align: center;
-        }
-
-        .internal-title {
-            color: var(--text-main);
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .internal-desc {
-            color: var(--text-muted);
-            text-align: center;
-            font-size: 13px;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
+        .dynamic-app-badge { font-size: 44px; margin: 15px auto; text-align: center; }
+        .internal-title { color: var(--text-main); text-align: center; font-size: 20px; margin-bottom: 10px; font-weight: 700; }
+        .internal-desc { color: var(--text-muted); text-align: center; font-size: 13px; margin-bottom: 20px; line-height: 1.4; }
 
         .code-inputs {
             display: flex;
@@ -368,21 +373,8 @@
             outline: none;
         }
 
-        .error-message {
-            color: var(--error-color);
-            font-size: 12px;
-            text-align: center;
-            margin-bottom: 15px;
-            display: none;
-        }
-
-        .resend-container {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
+        .error-message { color: var(--error-color); font-size: 12px; text-align: center; margin-bottom: 15px; display: none; }
+        .resend-container { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 10px; }
         .resend-link { color: var(--primary-color); text-decoration: none; font-weight: bold; }
 
         /* Screen 3: Success */
@@ -425,7 +417,7 @@
         .activity-item { background: #f9f9f9; padding: 10px; border-radius: 10px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
 
         /* ==========================================
-           SUPPORTED APPLICATIONS CARDS
+           CHANNELS SHOWCASE
            ========================================== */
         .channels-section {
             width: 100%;
@@ -459,58 +451,21 @@
         .badge-sms { background-color: var(--sms-color); }
 
         /* ==========================================
-           NEW SECTION: GLOBAL TELECOM NETWORK (MAP)
+           GLOBAL TELECOM NETWORK (MAP)
            ========================================== */
         .map-section {
-            background-color: #0b1312; /* Darker stylized background for contrast */
+            background-color: #0b1312;
             color: #ffffff;
             padding: 60px 20px;
             width: 100%;
             text-align: center;
         }
 
-        .map-section h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .map-section .section-desc {
-            font-size: 15px;
-            color: #a0afae;
-            max-width: 650px;
-            margin: 0 auto 40px auto;
-            line-height: 1.5;
-        }
-
-        .map-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            background: rgba(255,255,255,0.02);
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-
-        /* SVG Stylized World Map Background */
-        .world-map-svg {
-            width: 100%;
-            height: auto;
-            display: block;
-            opacity: 0.15; /* Subdued map lines */
-        }
-
-        /* Interactive Location Nodes Overlay */
-        .map-locations {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .map-section h3 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .map-section .section-desc { font-size: 15px; color: #a0afae; max-width: 650px; margin: 0 auto 40px auto; line-height: 1.5; }
+        .map-wrapper { max-width: 1000px; margin: 0 auto; position: relative; background: rgba(255,255,255,0.02); border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); padding: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .world-map-svg { width: 100%; height: auto; display: block; opacity: 0.15; }
+        .map-locations { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .network-node {
             position: absolute;
@@ -523,39 +478,17 @@
             animation: pulse-dot 2s infinite;
         }
 
-        /* Tooltip style on hover */
         .network-node::after {
-            content: attr(data-city);
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #222;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s, bottom 0.2s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
+            content: attr(data-city); position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: #222; color: #fff; padding: 5px 10px; border-radius: 6px; font-size: 11px; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity 0.2s, bottom 0.2s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .network-node:hover::after {
-            opacity: 1;
-            visibility: visible;
-            bottom: 25px;
-        }
-
-        /* Placements based on mock world map view percentages */
-        .node-athens { top: 40%; left: 54%; } /* Athens Headquarters */
-        .node-ny { top: 35%; left: 25%; }     /* New York Office */
-        .node-london { top: 32%; left: 47%; } /* London PoP */
-        .node-tokyo { top: 42%; left: 82%; }  /* Tokyo PoP */
-        .node-sydney { top: 78%; left: 88%; } /* Sydney PoP */
-        .node-saopaulo { top: 68%; left: 36%; } /* Sao Paulo PoP */
+        .network-node:hover::after { opacity: 1; visibility: visible; bottom: 25px; }
+        .node-athens { top: 40%; left: 54%; }
+        .node-ny { top: 35%; left: 25%; }
+        .node-london { top: 32%; left: 47%; }
+        .node-tokyo { top: 42%; left: 82%; }
+        .node-sydney { top: 78%; left: 88%; }
+        .node-saopaulo { top: 68%; left: 36%; }
 
         @keyframes pulse-dot {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 177, 89, 0.7); }
@@ -563,23 +496,8 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 177, 89, 0); }
         }
 
-        /* Value Cards underneath map */
-        .map-stats-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 900px;
-            margin: 40px auto 0 auto;
-        }
-
-        .stat-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
+        .map-stats-row { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 40px auto 0 auto; }
+        .stat-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; text-align: center; }
         .stat-box h5 { color: var(--secondary-color); font-size: 22px; font-weight: 700; margin-bottom: 5px; }
         .stat-box p { color: #a0afae; font-size: 13px; }
 
@@ -679,8 +597,10 @@
             }
 
             .marketing-side { width: auto; text-align: left; }
-            .marketing-side h2 { font-size: 46px; }
-            .hero-desc { margin: 0 0 40px 0; }
+            .marketing-side h2 { font-size: 48px; }
+            .hero-desc { margin: 0 0 20px 0; }
+            .tech-specs-row { justify-content: flex-start; margin-bottom: 40px; }
+            
             .demo-side { width: auto; }
             .phone-container { max-width: 360px; height: 720px; }
 
@@ -688,7 +608,6 @@
             .channels-section h3 { font-size: 34px; }
             .channels-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
-            /* Map specific desktop layouts */
             .map-section { padding: 80px 40px; }
             .map-section h3 { font-size: 34px; }
             .map-stats-row { grid-template-columns: repeat(3, 1fr); }
@@ -712,7 +631,6 @@
 </head>
 <body>
 
-    <!-- TOP NAVIGATION -->
     <header>
         <div class="header-container">
             <a href="#" class="brand-logo-area">
@@ -731,29 +649,43 @@
         </div>
     </header>
 
-    <!-- HERO & INTERACTIVE DEMO -->
     <div class="main-container">
         
         <div class="marketing-side">
-            <h2>Omnichannel Identity <span>Verification</span></h2>
+            <h2>Next-Gen Omnichannel <span>Identity Verification</span></h2>
             <p class="hero-desc">
-                SecureAuth delivers seamless verification tokens across WhatsApp, Telegram, Signal, and traditional SMS networks. Scale conversions globally while heavily reducing operational telecom overheads.
+                SecureAuth is a high-availability, developer-first authentication API delivering tokens seamlessly across WhatsApp, Telegram, Signal, and global SMS infrastructures. Build robust verification workflows with maximum throughput.
             </p>
+
+            <div class="tech-specs-row">
+                <div class="spec-badge">⚡ &lt; 2.5s Latency</div>
+                <div class="spec-badge">📈 99.99% Core SLA</div>
+                <div class="spec-badge">🛡️ SOC2 & GDPR Compliant</div>
+                <div class="spec-badge">🔌 Rest API Framework</div>
+            </div>
             
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">💬</div>
+                    <div class="feature-icon">🛡️</div>
                     <div class="feature-text">
-                        <h4>Multi-Channel Smart Routing</h4>
-                        <p>Let users authenticate using their favorite social apps. Lower delivery cost by up to 70% compared to traditional international SMS networks.</p>
+                        <h4>Adaptive Fallback Smart Routing</h4>
+                        <p>Intelligent communication matrix routes codes through high-conversion chat apps, automatically falling back to localized SMS pipes if delivery state fluctuates.</p>
                     </div>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">🔑</div>
                     <div class="feature-text">
-                        <h4>Advanced Security Guard</h4>
-                        <p>Integrated threat intelligence modules prevent fraudulent interceptions, spam-flooding protocols, and device takeover vulnerabilities.</p>
+                        <h4>Cryptographic Token Generation</h4>
+                        <p>One-Time Passwords (OTP) are generated using hardware-security modules (HSM) and distributed over end-to-end encrypted tunnels directly into the target client.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <div class="feature-text">
+                        <h4>Automated Rate-Limiting & Anti-Fraud</h4>
+                        <p>Integrated firewalls immediately mitigate brute-force attempts, intercept cellular SIM-swapping requests, and shield your API balances from automated bots.</p>
                     </div>
                 </div>
             </div>
@@ -763,7 +695,6 @@
             <div class="demo-badge">Interactive Live Demo</div>
             
             <div class="phone-container">
-                <!-- Screen 1: Login -->
                 <div id="screen-login" class="screen active">
                     <div class="logo-placeholder">🛡️</div>
                     <h1 style="font-size: 24px; margin-bottom: 5px;">SecureAuth</h1>
@@ -787,7 +718,6 @@
                     <button class="btn btn-primary" onclick="triggerSendCode()">Send Verification Code</button>
                 </div>
 
-                <!-- Screen 2: Verification -->
                 <div id="screen-verify" class="screen">
                     <button class="back-btn" onclick="goToScreen('screen-login')">←</button>
                     <div id="app-badge" class="dynamic-app-badge">📱</div>
@@ -807,7 +737,6 @@
                     <button class="btn btn-internal" id="verify-action-btn" onclick="verifyCode()">Verify Code</button>
                 </div>
 
-                <!-- Screen 3: Success -->
                 <div id="screen-success" class="screen">
                     <div class="success-icon">✅</div>
                     <h2 class="internal-title" style="font-size: 20px; margin-bottom: 12px;">Verified Successfully!</h2>
@@ -815,7 +744,6 @@
                     <button class="btn btn-internal" onclick="goToScreen('screen-dashboard')" style="margin-top: 25px;">Go to Dashboard</button>
                 </div>
 
-                <!-- Screen 4: Dashboard -->
                 <div id="screen-dashboard" class="screen">
                     <div class="dashboard-header" id="dash-header">
                         <div class="welcome-text">
@@ -845,7 +773,6 @@
 
     </div>
 
-    <!-- CHANNELS SHOWCASE -->
     <section class="channels-section">
         <div class="channels-container">
             <h3>Supported Channels Your Users Love</h3>
@@ -876,32 +803,23 @@
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- NEW SECTION: GLOBAL TELECOM NETWORK (MAP)  -->
-    <!-- ========================================== -->
     <section class="map-section">
         <div class="admin-container">
             <h3>Our Global Localized Network</h3>
             <p class="section-desc">By establishing physical headquarters and local network nodes (PoPs) directly inside major international telecom hubs, we bypass expensive global roaming markups—delivering your verification messages at the lowest local market prices.</p>
             
             <div class="map-wrapper">
-                <!-- Clean Minimalist SVG World Map Layout Background Component -->
                 <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#2c3e3c" d="M150,150 Q180,120 220,130 T300,160 T400,120 T500,140 T600,110 T700,150 T800,130 T900,160 L920,220 Q880,280 840,320 T760,400 T650,420 T520,380 T380,410 T240,360 T150,280 Z"/>
                     <circle cx="250" cy="180" r="40" fill="#223331"/>
                     <circle cx="530" cy="190" r="50" fill="#223331"/>
                     <circle cx="800" cy="220" r="45" fill="#223331"/>
                     <circle cx="350" cy="340" r="35" fill="#223331"/>
-                    <!-- Simple grid overlay lines for design depth -->
                     <line x1="0" y1="100" x2="1000" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
                     <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
                     <line x1="0" y1="400" x2="1000" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                    <line x1="250" y1="0" x2="250" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                    <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                    <line x1="750" y1="0" x2="750" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
                 </svg>
 
-                <!-- Location Dot Overlays -->
                 <div class="map-locations">
                     <div class="network-node node-athens" data-city="Athens, Greece (HQ & EMEA Hub)"></div>
                     <div class="network-node node-ny" data-city="New York, USA (North America Gateway)"></div>
@@ -929,7 +847,6 @@
         </div>
     </section>
 
-    <!-- ENTERPRISE ADMIN SHOWCASE -->
     <section class="admin-section">
         <div class="admin-container">
             <h3>Enterprise Omni-Channel Dashboard</h3>
@@ -954,7 +871,6 @@
         </div>
     </section>
 
-    <!-- GLOBAL FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
