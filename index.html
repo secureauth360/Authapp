@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureAuth - Multi-Channel Authentication Platform v1</title>
+    <title>SecureAuth - Multi-Channel Authentication Platform</title>
     <style>
         :root {
             --primary-color: #005A54; /* Brand Deep Teal */
@@ -425,7 +425,7 @@
         .activity-item { background: #f9f9f9; padding: 10px; border-radius: 10px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
 
         /* ==========================================
-           NEW SECTION: CHANNELS SHOWCASE (ATTRACT CUSTOMERS)
+           SUPPORTED APPLICATIONS CARDS
            ========================================== */
         .channels-section {
             width: 100%;
@@ -435,74 +435,153 @@
             text-align: center;
         }
 
-        .channels-section h3 {
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .channels-section .sub-title {
-            font-size: 15px;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 35px auto;
-            line-height: 1.5;
-        }
-
-        .channels-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .channels-section h3 { font-size: 26px; font-weight: 800; margin-bottom: 10px; color: #111; }
+        .channels-section .sub-title { font-size: 15px; color: var(--text-muted); max-width: 600px; margin: 0 auto 35px auto; line-height: 1.5; }
+        .channels-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1200px; margin: 0 auto; }
+        
         .channel-card {
             background: white;
             border-radius: 16px;
             padding: 24px;
             border: 1px solid #eaf0ee;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .channel-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.04);
-        }
+        .channel-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.04); }
+        .channel-badge { width: 46px; height: 46px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 22px; margin-bottom: 16px; color: white; }
+        .channel-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: #111; }
+        .channel-card p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
 
-        .channel-badge {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            margin-bottom: 16px;
-            color: white;
-        }
-
-        .channel-card h4 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #111;
-        }
-
-        .channel-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* Channel Custom Colors */
         .badge-wa { background-color: var(--whatsapp-color); }
         .badge-tg { background-color: var(--telegram-color); }
         .badge-sg { background-color: var(--signal-color); }
         .badge-sms { background-color: var(--sms-color); }
+
+        /* ==========================================
+           NEW SECTION: GLOBAL TELECOM NETWORK (MAP)
+           ========================================== */
+        .map-section {
+            background-color: #0b1312; /* Darker stylized background for contrast */
+            color: #ffffff;
+            padding: 60px 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .map-section h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .map-section .section-desc {
+            font-size: 15px;
+            color: #a0afae;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            line-height: 1.5;
+        }
+
+        .map-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            background: rgba(255,255,255,0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* SVG Stylized World Map Background */
+        .world-map-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.15; /* Subdued map lines */
+        }
+
+        /* Interactive Location Nodes Overlay */
+        .map-locations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .network-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(0, 177, 89, 0.7);
+            animation: pulse-dot 2s infinite;
+        }
+
+        /* Tooltip style on hover */
+        .network-node::after {
+            content: attr(data-city);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, bottom 0.2s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .network-node:hover::after {
+            opacity: 1;
+            visibility: visible;
+            bottom: 25px;
+        }
+
+        /* Placements based on mock world map view percentages */
+        .node-athens { top: 40%; left: 54%; } /* Athens Headquarters */
+        .node-ny { top: 35%; left: 25%; }     /* New York Office */
+        .node-london { top: 32%; left: 47%; } /* London PoP */
+        .node-tokyo { top: 42%; left: 82%; }  /* Tokyo PoP */
+        .node-sydney { top: 78%; left: 88%; } /* Sydney PoP */
+        .node-saopaulo { top: 68%; left: 36%; } /* Sao Paulo PoP */
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 177, 89, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 177, 89, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 177, 89, 0); }
+        }
+
+        /* Value Cards underneath map */
+        .map-stats-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-box h5 { color: var(--secondary-color); font-size: 22px; font-weight: 700; margin-bottom: 5px; }
+        .stat-box p { color: #a0afae; font-size: 13px; }
 
         /* ==========================================
            ADMIN DASHBOARD SHOWCASE
@@ -605,10 +684,14 @@
             .demo-side { width: auto; }
             .phone-container { max-width: 360px; height: 720px; }
 
-            /* Grid updates for Channels Showcase */
             .channels-section { padding: 70px 40px; }
             .channels-section h3 { font-size: 34px; }
             .channels-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+            /* Map specific desktop layouts */
+            .map-section { padding: 80px 40px; }
+            .map-section h3 { font-size: 34px; }
+            .map-stats-row { grid-template-columns: repeat(3, 1fr); }
 
             .admin-section { padding: 80px 40px; }
             .admin-section h3 { font-size: 36px; }
@@ -762,41 +845,85 @@
 
     </div>
 
-    <!-- ========================================== -->
-    <!-- NEW SECTION: SUPPORTED APPLICATIONS CARDS -->
-    <!-- ========================================== -->
+    <!-- CHANNELS SHOWCASE -->
     <section class="channels-section">
         <div class="channels-container">
             <h3>Supported Channels Your Users Love</h3>
             <p class="sub-title">Give your customers the flexibility to authenticate through the world's most trusted messaging platforms, ensuring higher conversion rates and maximum delivery success.</p>
             
             <div class="channels-grid">
-                <!-- WhatsApp Card -->
                 <div class="channel-card">
                     <div class="channel-badge badge-wa">🟢</div>
                     <h4>WhatsApp Business</h4>
                     <p>Leverage a 98% open rate. Deliver verified, branded security codes directly into users' chats instantly.</p>
                 </div>
-
-                <!-- Telegram Card -->
                 <div class="channel-card">
                     <div class="channel-badge badge-tg">🔵</div>
                     <h4>Telegram Chat</h4>
                     <p>Fast, reliable, and entirely developer-friendly. Ideal for tech-savvy communities and fast response loops.</p>
                 </div>
-
-                <!-- Signal Card -->
                 <div class="channel-card">
                     <div class="channel-badge badge-sg">🔵</div>
                     <h4>Signal App</h4>
                     <p>Maximum data protection. Send state-of-the-art secure tokens through end-to-end open-source encrypted rails.</p>
                 </div>
-
-                <!-- SMS Card -->
                 <div class="channel-card">
                     <div class="channel-badge badge-sms">💬</div>
                     <h4>Traditional SMS</h4>
                     <p>The universal fallback. Reaches any mobile phone network or region seamlessly, no application required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- NEW SECTION: GLOBAL TELECOM NETWORK (MAP)  -->
+    <!-- ========================================== -->
+    <section class="map-section">
+        <div class="admin-container">
+            <h3>Our Global Localized Network</h3>
+            <p class="section-desc">By establishing physical headquarters and local network nodes (PoPs) directly inside major international telecom hubs, we bypass expensive global roaming markups—delivering your verification messages at the lowest local market prices.</p>
+            
+            <div class="map-wrapper">
+                <!-- Clean Minimalist SVG World Map Layout Background Component -->
+                <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#2c3e3c" d="M150,150 Q180,120 220,130 T300,160 T400,120 T500,140 T600,110 T700,150 T800,130 T900,160 L920,220 Q880,280 840,320 T760,400 T650,420 T520,380 T380,410 T240,360 T150,280 Z"/>
+                    <circle cx="250" cy="180" r="40" fill="#223331"/>
+                    <circle cx="530" cy="190" r="50" fill="#223331"/>
+                    <circle cx="800" cy="220" r="45" fill="#223331"/>
+                    <circle cx="350" cy="340" r="35" fill="#223331"/>
+                    <!-- Simple grid overlay lines for design depth -->
+                    <line x1="0" y1="100" x2="1000" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="0" y1="400" x2="1000" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="250" y1="0" x2="250" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="750" y1="0" x2="750" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                </svg>
+
+                <!-- Location Dot Overlays -->
+                <div class="map-locations">
+                    <div class="network-node node-athens" data-city="Athens, Greece (HQ & EMEA Hub)"></div>
+                    <div class="network-node node-ny" data-city="New York, USA (North America Gateway)"></div>
+                    <div class="network-node node-london" data-city="London, UK (Western Europe PoP)"></div>
+                    <div class="network-node node-tokyo" data-city="Tokyo, Japan (APAC Core)"></div>
+                    <div class="network-node node-sydney" data-city="Sydney, Australia (Oceania PoP)"></div>
+                    <div class="network-node node-saopaulo" data-city="São Paulo, Brazil (LATAM Hub)"></div>
+                </div>
+            </div>
+
+            <div class="map-stats-row">
+                <div class="stat-box">
+                    <h5>Direct Carrier Routes</h5>
+                    <p>Connected straight into 450+ telecom operators globally.</p>
+                </div>
+                <div class="stat-box">
+                    <h5>Local Pricing Edge</h5>
+                    <p>Save up to 65% by eradicating heavy international SMS transit fees.</p>
+                </div>
+                <div class="stat-box">
+                    <h5>Redundant Systems</h5>
+                    <p>6 localized offices ensuring 99.99% system delivery uptime.</p>
                 </div>
             </div>
         </div>
@@ -816,7 +943,6 @@
                     </div>
                     <div class="mock-admin-img" id="admin-img-1"></div>
                 </div>
-
                 <div class="admin-card">
                     <div class="admin-card-info">
                         <h4>2. Unified Communication Audits</h4>
